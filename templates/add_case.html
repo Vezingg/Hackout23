@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Case</title>
+</head>
+<body>
+    <h2>Add New Case</h2>
+    <form method="POST" action="/add">
+        <input type="hidden" name="user_input" value="{{ user_input }}">
+        <label for="disease">Enter Disease Name:</label>
+        <input type="text" name="disease">
+        <button type="submit">Add Case</button>
+    </form>
+</body>
+</html>
