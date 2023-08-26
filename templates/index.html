@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Disease Predictor</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Disease Predictor</h1>
+      <form method="POST">
+        {% for symptom in symptoms %}
+        <div class="symptom">
+          <label for="{{ symptom }}">{{ symptom }}</label>
+          <input
+            type="checkbox"
+            name="{{ symptom }}"
+            id="{{ symptom }}"
+            value="yes"
+          />
+        </div>
+        {% endfor %}
+        <button type="submit">Predict</button>
+      </form>
+      {% if predicted_disease %}
+      <div class="prediction">
+        <p>Predicted Disease: {{ predicted_disease }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
